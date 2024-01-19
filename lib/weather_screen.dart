@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:weather_app/additional_info_item.dart';
+import 'package:weather_app/hourly_forcast_item.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -42,9 +44,10 @@ class WeatherScreen extends StatelessWidget {
                 child: const Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
-                        '300 °F',  
+                        '300k',  
                         style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
@@ -78,191 +81,42 @@ class WeatherScreen extends StatelessWidget {
               
               ),
 
-              const SizedBox(height: 16),
-              SingleChildScrollView(
+              const SizedBox(height: 8),
+            const  SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                     Card(
-                        elevation: 6,
-              
-                        child: Container(
-                          width: 100,
-                          padding: const EdgeInsets.all(8.0),
-                          decoration:BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                          ) ,
-                          child: Column(
-                            children: [
-                              Text(
-                                '03:00',
-                                style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                                ),
-                                const SizedBox(height:8 ),
-                                Icon(Icons.cloud,
-                                size: 32,
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                '320.12',
-                                
-                                ),
-                            ]
-                            ),
-                        ),
-                      ),
-              
-                       Card(
-                        elevation: 6,
-              
-                        child: Container(
-                          width: 100,
-                          padding: const EdgeInsets.all(8.0),
-                          decoration:BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                          ) ,
-                          child: Column(
-                            children: [
-                              Text(
-                                '03:00',
-                                style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                                ),
-                                const SizedBox(height:8 ),
-                                Icon(Icons.cloud,
-                                size: 32,
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                '320.12',
-                                
-                                ),
-                            ]
-                            ),
-                        ),
-                      ),
-                       Card(
-                        elevation: 6,
-              
-                        child: Container(
-                          width: 100,
-                          padding: const EdgeInsets.all(8.0),
-                          decoration:BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                          ) ,
-                          child: Column(
-                            children: [
-                              Text(
-                                '03:00',
-                                style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                                ),
-                                const SizedBox(height:8 ),
-                                Icon(Icons.cloud,
-                                size: 32,
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                '320.12',
-                                
-                                ),
-                            ]
-                            ),
-                        ),
-                      ),
-                       Card(
-                        elevation: 6,
-              
-                        child: Container(
-                          width: 100,
-                          padding: const EdgeInsets.all(8.0),
-                          decoration:BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                          ) ,
-                          child: Column(
-                            children: [
-                              Text(
-                                '03:00',
-                                style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                                ),
-                                const SizedBox(height:8 ),
-                                Icon(Icons.cloud,
-                                size: 32,
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                '320.12',
-                                
-                                ),
-                            ]
-                            ),
-                        ),
-                      ),
-                       Card(
-                        elevation: 6,
-              
-                        child: Container(
-                          width: 100,
-                          padding: const EdgeInsets.all(8.0),
-                          decoration:BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                          ) ,
-                          child: Column(
-                            children: [
-                              Text(
-                                '03:00',
-                                style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                                ),
-                                const SizedBox(height:8 ),
-                                Icon(Icons.cloud,
-                                size: 32,
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                '320.12',
-                                
-                                ),
-                            ]
-                            ),
-                        ),
-                      ),
-                       Card(
-                        elevation: 6,
-              
-                        child: Container(
-                          width: 100,
-                          padding: const EdgeInsets.all(8.0),
-                          decoration:BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                          ) ,
-                          child: Column(
-                            children: [
-                              Text(
-                                '03:00',
-                                style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold),
-                                ),
-                                const SizedBox(height:8 ),
-                                Icon(Icons.cloud,
-                                size: 32,
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                '320.12',
-                                
-                                ),
-                            ]
-                            ),
-                        ),
-                      ),
+                    
+                      
+                       
+                               HourlyForcastItem(
+                                time: '03:00',
+                                icon: Icons.cloud,
+                                temperature: '320.12',
+                               ), 
+                               HourlyForcastItem(
+                                time: '03:10',
+                                icon: Icons.sunny,
+                                temperature: '320.20',
+                               ), 
+                               HourlyForcastItem(
+                                time: '03:30',
+                                icon: Icons.cloud,
+                                temperature: '320.21',
+                               ), 
+                               HourlyForcastItem(
+                                time: '03:40',
+                                icon: Icons.nightlife,
+                                temperature: '320.31',
+                               ), 
+                               HourlyForcastItem(
+                                time: '03:50',
+                                icon: Icons.cloud,
+                                temperature: '320.41',
+                               ), 
+                               
+                       // another card used
+                      
                       // shad
                     
                   ],
@@ -271,14 +125,49 @@ class WeatherScreen extends StatelessWidget {
           
           //weather forecast cards
 
-          const Placeholder(
-            fallbackHeight: 150,
-          ),
+         
           const SizedBox(height: 20),
-          //additional information
-           const Placeholder(
-            fallbackHeight: 150,
-          ),
+            const Text(
+              'Additional Information',
+              style: TextStyle(fontSize: 24,
+              fontWeight: FontWeight.bold,
+              ),
+              
+              ),
+              //shad11
+            const SizedBox(height: 16.0),
+            Row(
+
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+              children: [
+                
+                AdditionalInfoItem(
+                  icon: Icons.water_drop,
+                  label: 'Humditiy',
+                  value: '91',
+                ),
+                AdditionalInfoItem(
+                  icon: Icons.air,
+                  label: 'Air',
+                  value: '7.5',
+
+                ),
+                AdditionalInfoItem(
+                  icon: Icons.beach_access,
+                  label: 'Pressure',
+                  value: '1000',
+                ),
+                
+
+                  
+              
+                  
+               
+              ],
+            )
+
+           // shad11
         ],
         ),
       ),
@@ -286,3 +175,5 @@ class WeatherScreen extends StatelessWidget {
     );
   }
 }
+
+
